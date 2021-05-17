@@ -25,7 +25,8 @@ def generate_excel(global_data_list: list, dir_name: str):
             mysheet['C' + str(i)] = str(shipping_date)
             mysheet['D' + str(i)] = str(line[0])
             mysheet['E' + str(i)] = str(line[1])
-            mysheet['F' + str(i)] = str(line[2])
+            if line[2]:
+                mysheet['F' + str(i)] = str(line[2])
             i += 1
 
     mywb.save(dir_name)
